@@ -1,0 +1,2 @@
+salt-ssh --no-host-keys salt-minion1 cmd.run "uname -a"
+salt-ssh salt-minion-1 state.apply salt-minion test=true
