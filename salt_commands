@@ -1,2 +1,9 @@
 salt-ssh --no-host-keys salt-minion1 cmd.run "uname -a"
-salt-ssh salt-minion-1 state.apply salt-minion test=true
+salt-ssh salt-minion-1 state.apply salt-minion-1 test=true
+salt-ssh salt-minion-1 state.apply salt-minion-1
+salt-key -L
+salt-key -D # delete keys
+salt-key -a salt-minion-1
+salt -vvv salt-minion-1 test.ping
+salt -vvv salt-minion-1 grains.item ipv4
+###############################################################
